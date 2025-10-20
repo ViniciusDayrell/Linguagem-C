@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estruturas Condicionais - Linguagem C</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <header id="cabecalho">
+        <h1>Linguagem C - Estruturas Condicionais</h1>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="condicionais.html">Estruturas Condicionais</a></li>
+                <li><a href="repeticao.html">Estruturas de Repetição</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="conteudo-principal">
+            <section id="conteudo-explicacoes">
+                <div class="container-explicacao">
+                    <h2>Estruturas Condicionais</h2>
+                    <p>
+                        As estruturas condicionais em C controlam o fluxo de um programa com base em condições lógicas.
+                        As principais são if, if-else e switch-case, que permitem a execução de diferentes blocos de
+                        código dependendo se uma expressão é verdadeira ou falsa.
+                    </p>
+                </div>
+
+                <div class="container-explicacao" id="condicao-if">
+                    <h3>IF</h3>
+                    <ul>
+                        <li>Executa um bloco de código apenas se a condição for verdadeira.</li>
+                        <li>Sintaxe:
+                            <pre><code>
+if (condição) { 
+    // bloco de código 
+}
+                            </code></pre>
+                        </li>
+                        <li>Exemplo:
+                            <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    }
+    return 0;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container-explicacao" id="condicao-if-else">
+                    <h3>IF-ELSE</h3>
+                    <ul>
+                        <li>Executa um bloco de código se a condição for verdadeira e outro bloco se for falsa.</li>
+                        <li>Sintaxe:
+                            <pre><code>
+if (condição) {
+    // código se verdadeiro 
+} else {
+    // código se falso
+}
+                            </code></pre>
+                        </li>
+                        <li>Exemplo:
+                            <pre><code>
+int x = 10;
+if (x > 5) {
+    printf("Maior que 5");
+} else {
+    printf("Menor ou igual a 5");
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container-explicacao" id="condicao-switch-case">
+                    <h3>SWITCH-CASE</h3>
+                    <ul>
+                        <li>Permite escolher uma entre várias opções de código com base no valor de uma variável.</li>
+                        <li>A expressão do switch deve ser comparada com constantes em cada bloco case</li>
+                        <li>A palavra-chave break é essencial para sair do switch após a execução de um bloco.</li>
+                        <li>A cláusula default é executada se o valor da variável não corresponder a nenhuma das opções
+                            de case.</li>
+                        <li>Sintaxe:
+                            <pre><code>
+switch (variavel) { 
+    case constante1: 
+        // código 
+        break;
+    case constante2: 
+        // código 
+        break;
+    default: 
+        // código 
+        break;
+}
+                            </code></pre>
+                        </li>
+                        <li>Exemplo:
+                            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int opcao;
+    printf("=== MENU DE OPÇÕES ===\n");
+    printf("1 - Café\n");
+    printf("2 - Suco\n");
+    printf("3 - Água\n");
+    printf("4 - Refrigerante\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &opcao);
+    
+    switch (opcao) {
+        case 1: printf("Você escolheu Café!\n"); break;
+        case 2: printf("Você escolheu Suco!\n"); break;
+        case 3: printf("Você escolheu Água!\n"); break;
+        case 4: printf("Você escolheu Refrigerante!\n"); break;
+        default: printf("Opção inválida!\n");
+    }
+    return 0;
+}
+                            </code></pre>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <aside>
+                <h4>Estrutura Condicional Simples</h4>
+                <p>
+                    A estrutura condicional simples expõe que uma instrução ou bloco de instruções só sejam executados se
+                    determinada condição for verdadeira. Uma condição é uma comparação que possui dois valores
+                    possíveis: verdadeiro ou falso.
+                </p>
+
+                <h4>Estrutura Condicional Composta</h4>
+                <p>
+                    A estrutura condicional composta expõe que uma instrução ou bloco de instruções só sejam executados
+                    se determinada condição for satisfeita. Caso essa condição seja falsa, é executada uma outra
+                    instrução ou um bloco de instruções diferente.
+                </p>
+            </aside>
+        </div>
+
+        <section class="exercicios-section">
+            <h2>Exercícios Práticos</h2>
+
+            <div class="exercicio">
+                <h3>Exercício 1 - Cálculo das raízes de uma equação do 2º grau</h3>
+                <p>
+                    Crie um programa em C que leia os valores de a, b e c de uma equação do 2º grau e determine suas
+                    raízes.
+                </p>
+                <p>
+                    Se Δ &lt; 0 → não existem raízes reais.<br>
+                    Se Δ = 0 → existe apenas uma raiz real.<br>
+                    Se Δ &gt; 0 → existem duas raízes reais diferentes.
+                </p>
+
+                <pre class="conteudo-resposta"><code>
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main() {
+    float a, b, c, delta, x1, x2;
+    printf("Digite os valores de a, b e c: ");
+    scanf("%f %f %f", &a, &b, &c);
+
+    if (a == 0) {
+        printf("Não é uma equação do segundo grau.\n");
+    } else {
+        delta = b*b - 4*a*c;
+        if (delta < 0) {
+            printf("Não existem raízes reais.\n");
+        } else if (delta == 0) {
+            x1 = -b / (2*a);
+            printf("Existe apenas uma raiz real: %.2f\n", x1);
+        } else {
+            x1 = (-b + sqrt(delta)) / (2*a);
+            x2 = (-b - sqrt(delta)) / (2*a);
+            printf("As duas raízes reais são: %.2f e %.2f\n", x1, x2);
+        }
+    }
+    return 0;
+}
+                </code></pre>
+
+                <button class="botao-mostrar-respostas">Mostrar resposta</button>
+            </div>
+
+            <div class="exercicio">
+                <h3>Exercício 2 - Calculadora com Switch-Case</h3>
+                <p>Crie um programa em C que funcione como uma calculadora simples.</p>
+                <ul>
+                    <li>Ler dois números do usuário.</li>
+                    <li>Ler a operação desejada (+, -, *, /).</li>
+                    <li>Usar switch-case para realizar a operação correta.</li>
+                    <li>Exibir o resultado formatado.</li>
+                    <li>Tratar o caso de divisão por zero.</li>
+                    <li>Exibir mensagem de erro para operações inválidas.</li>
+                </ul>
+
+                <pre class="conteudo-resposta"><code>
+#include &lt;stdio.h&gt;
+
+int main() {
+    float num1, num2, resultado;
+    char operacao;
+    
+    printf("=== CALCULADORA SIMPLES ===\n");
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+    printf("Digite a operação (+, -, *, /): ");
+    scanf(" %c", &operacao);
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+    
+    switch (operacao) {
+        case '+':
+            resultado = num1 + num2;
+            printf("%.2f + %.2f = %.2f\n", num1, num2, resultado);
+            break;
+        case '-':
+            resultado = num1 - num2;
+            printf("%.2f - %.2f = %.2f\n", num1, num2, resultado);
+            break;
+        case '*':
+            resultado = num1 * num2;
+            printf("%.2f * %.2f = %.2f\n", num1, num2, resultado);
+            break;
+        case '/':
+            if (num2 != 0) {
+                resultado = num1 / num2;
+                printf("%.2f / %.2f = %.2f\n", num1, num2, resultado);
+            } else {
+                printf("Erro: Divisão por zero!\n");
+            }
+            break;
+        default:
+            printf("Operação inválida! Use apenas +, -, * ou /\n");
+    }
+    return 0;
+}
+                </code></pre>
+
+                <button class="botao-mostrar-respostas">Mostrar resposta</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Linguagem C - Vinicius Mendes Dayrell</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
