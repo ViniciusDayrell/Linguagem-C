@@ -64,7 +64,7 @@ pre:hover {
 }
 
 /* Conteúdo principal - Remover marcadores de lista */
-#conteudo-explicacoes ul,
+.conteudo-explicacoes ul,
 .exercicios-section ul,
 .container-explicacao ul,
 .exercicio ul {
@@ -73,7 +73,7 @@ pre:hover {
 }
 
 /* Se quiser manter algum espaçamento nos itens da lista */
-#conteudo-explicacoes li,
+.conteudo-explicacoes li,
 .exercicios-section li,
 .container-explicacao li,
 .exercicio li {

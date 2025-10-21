@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linguagem C - Estrutura em C</title>
+
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+
+<body>
+    <header id="cabecalho">
+        <h1>Linguagem C - Estrutura em C</h1>
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="estruturaC.html">Estrutura em C</a></li>
+                <li><a href="condicionais.html">Estruturas Condicionais</a></li>
+                <li><a href="repeticao.html">Estruturas de Repetição</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="conteudo-principal">
+            <section class="conteudo-explicacoes">
+                <div class="container-explicacao">
+                    <h2>Estrutura de um programa em C</h2>
+                    <p>
+                        Todo programa em linguagem C segue uma estrutura básica, que serve como o esqueleto do código. É
+                        a
+                        partir dessa base que construímos qualquer programa, do mais simples ao mais complexo.
+                    </p>
+                </div>
+
+                <div class="container-explicacao">
+                    <h3>Bibliotecas</h3>
+                    <ul>
+                        <li>A primeira parte de um programa em C é a inclusão das bibliotecas, que fornecem funções
+                            prontas
+                            para o uso.
+                        </li>
+                        <li>Essas bibliotecas são incluídas com a diretiva <code>#include.</code></li>
+                        <li>Exemplo:
+                            <pre><code>
+#include &lt;stdio.h&gt;   // Biblioteca para entrada e saída de dados (printf, scanf)
+#include &lt;stdlib.h&gt;  // Biblioteca auxiliar com funções úteis (ex: system, malloc)
+                            </code></pre>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container-explicacao">
+
+                    <h3>Função Principal</h3>
+                    <p>
+                        Todo programa em C precisa ter uma função principal, chamada main(). É dentro dela que o
+                        computador
+                        começa a executar os comandos.
+                    </p>
+                    <br>
+
+                    <p>Exemplo:</p>
+                    <pre><code>
+int main() {
+    // Aqui dentro vão os comandos do programa
+    return 0;
+}
+                    </code></pre>
+                    <ul>
+                        <li>
+                            A palavra int indica que a função vai retornar um valor inteiro para o sistema operacional
+                            ao
+                            final da execução.
+                        </li>
+                        <li>
+                            O corpo da função fica entre chaves { }, onde você escreve o código que o programa deve
+                            executar.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="container-explicacao">
+
+                    <h3>Retorno do Programa (return 0;)</h3>
+                    <p>O comando: <strong>return 0;</strong> significa que o programa foi executado com sucesso.</p><br>
+                    <p>
+                        Como o main foi declarado como int, ele <strong>precisa retornar um número inteiro</strong>, e
+                        por
+                        convenção usamos o zero (0) para indicar que tudo ocorreu bem.
+                    </p>
+                    <br>
+
+                    <h3>Exemplo completo</h3>
+                    <pre><code>                    
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+                        
+int main() {
+    printf("Ola, mundo!\n"); // Exibe uma mensagem na tela
+                            
+    return 0; // Encerra o programa com sucesso
+}
+                    </code></pre>
+                </div>
+            </section>
+        </div>
+
+        <section class="exercicios-section">
+            <h2>Exercicios Práticos</h2>
+
+            <div class="exercicio">
+                <h3>Monte um programa completo em C que:</h3>
+                <ul>
+                    <li>Contenha as bibliotecas básicas (stdio.h e stdlib.h)</li>
+                    <li>Tenha a função principal int main()</li>
+                    <li>Mostre na tela a mensagem: Ola, mundo! Meu primeiro programa em C!</li>
+                </ul>
+
+                <pre class="conteudo-resposta"><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main() {
+    printf("Ola, mundo! Meu primeiro programa em C!\n");
+
+    return 0;
+}  
+                    </code></pre>
+
+                <button class="botao-mostrar-respostas">Mostrar resposta</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Linguagem C - Vinicius Mendes Dayrell</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
